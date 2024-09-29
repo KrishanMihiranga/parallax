@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #000;
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'Lilita One', cursive;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+}
+:root{
+    --parallax-speed: 100;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.home {
+    width: 100vw;
+    height: 100vh;
+    background: url('./assets/bgimg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 10rem;
+    animation: parallax linear;
+    animation-timeline: scroll();
+    --parallax-speed: 1;
+
+}
+
+.parallax > *{
+    animation: parallax linear;
+    animation-timeline: scroll();
+}
+.home>div {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home h2 {
+    font-weight: 400;
+    font-size: 3rem;
+    --parallax-speed: -3;
+}
+
+.home h1 {
+    --parallax-speed: -3;
+    margin-top: 2rem;
+    font-weight: 600;
+    font-size: 8rem;
+    width: 60%;
+}
+
+.home button {
+    --parallax-speed: -3;
+    margin-top: 4rem;
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    background-color: #E33BE6;
+    padding: 1rem 2rem;
+    transform: skewX(10deg);
+}
+
+.about {
+    height: 100vh;
+    color: grey;
+}
+
+@keyframes parallax {
+    to {
+        transform:
+            translateY(calc(var(--parallax-speed) * 200px));
+    }
+}
